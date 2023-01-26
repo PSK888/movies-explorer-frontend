@@ -22,4 +22,8 @@
     grid-template-columns: repeat(1, minmax(300px, 1fr));
     gap: 34px;
   }
+
+  .cards__button-container {
+    max-width: 240px;
+  }
 }

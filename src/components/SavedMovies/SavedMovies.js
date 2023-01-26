@@ -1,13 +1,14 @@
 import SearchForm from '../SearchForm/SearchForm';
+import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import './SavedMovies.css';
 
-function SavedMovies(props) {
+function SavedMovies({ movies }) {
 
   return (
     <main className='movies'>
       <div className='movies__container'>
-        <SearchForm handleSearch={props.handleSearch} />
-     *savedMovies*
+        <SearchForm />
+        <MoviesCardList movies={movies} />
       </div>
     </main>
   )

@@ -1,29 +1,19 @@
-import { useState } from 'react';
+import React, { useState } from "react";
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import SearchForm from '../SearchForm/SearchForm';
 import './Movies.css';
 
-function Movies(props) {
+function Movies({ movies }) {
   const width = window.screen.width;
- 
-  const [counter, setCounter] = useState(width > 768 ? 16 : 1); // начальное кол-во карточек
- 
+  const [counter, setCounter] = useState(width > 1279 ? 12 : 1 && width > 767 ? 8 : 1 && width > 319 ? 4 : 1);
   function handleClick() {
-    setCounter(counter + (width > 768 ? 8 : 1)); // (еще) + 8
+    setCounter(counter + (width > 319 ? 4 : 1));
   }
-
   return (
     <main className='movies'>
       <div className='movies__container'>
-        <SearchForm handleSearch={props.handleSearch} />
-        <MoviesCardList
-          movies={props.movies}
-          counter={counter}
-          mainApi={props.mainApi}
-          handleDelete={props.handleDelete}
-          isLoading={props.isLoading}
-          nothingFound={props.nothingFound}
-        />
+        <SearchForm />
+        <MoviesCardList movies={movies} counter={counter} />
         <button className='movies__button' type='button' onClick={handleClick}>Ещё</button>
       </div>
     </main>

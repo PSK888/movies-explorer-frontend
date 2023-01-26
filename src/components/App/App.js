@@ -13,6 +13,7 @@ import Login from '../Login/Login';
 import Register from '../Register/Register';
 import Error from '../Error/Error';
 import Menu from '../Menu/Menu';
+import moviesData from '../../utils/cards';
 
 function App() {
   const navigate = useNavigate();
@@ -20,9 +21,12 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    setSavedMovies(JSON.parse(localStorage.getItem('savedMovies')) ?
-      JSON.parse(localStorage.getItem('savedMovies')) : [])
-  }, [])
+    setSavedMovies(
+      moviesData.filter((movie) => {
+        return movie.saved;
+      })
+    );
+  }, []);
 
   function registration() {
     navigate('/signin');
@@ -55,7 +59,7 @@ function App() {
           <Route exact path='/signin' element={<Login authorization={authorization} />} />
           <Route exact path='/profile' element={<Profile signOut={signOut} />} />
           <Route path="/movies" element={
-            <Movies movies={JSON.parse(localStorage.getItem('movies'))} />
+            <Movies movies={moviesData} />
           } />
           <Route path="/saved-movies" element={
             <SavedMovies movies={savedMovies} />

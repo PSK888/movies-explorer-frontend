@@ -1,25 +1,13 @@
+import React from "react";
 import MoviesCard from '../MoviesCard/MoviesCard';
 import './MoviesCardList.css';
 
-function MoviesCardList(props) {
-
+function MoviesCardList({ movies, counter }) {
   return (
     <section className='movies-card-list'>
-      {props.movies.slice(0, props.counter).map((movie) => {
-        return (
-          <MoviesCard
-            counter={props.counter}
-            mainApi={props.mainApi}
-            likedMovies={props.likedMovies}
-            movie={movie}
-            handleDelete={props.handleDelete}
-            key={movie.nameRU}
-            setSavedFilteredMovies={props.setSavedFilteredMovies}
-            savedFilteredMovies={props.savedFilteredMovies}
-            handleDeleteMovie={props.handleDeleteMovie}
-          />
-        )
-      })}
+      {movies.slice(0, counter).map((movie) => (
+        <MoviesCard key={movie._id} card={movie} counter={counter} />
+      ))}
     </section>
   )
 }
