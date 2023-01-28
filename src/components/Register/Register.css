@@ -90,13 +90,13 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 768px) {
   .register__container {
     padding: 232px 0;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 500px) {
   .register__container {
     padding: 56px 30px 30px;
   }

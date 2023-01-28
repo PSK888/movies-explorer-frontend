@@ -12,7 +12,7 @@ function MoviesCard({ card }) {
   }
 
   return (
-    <div className='movies-card' >
+    <li className='movies-card'>
       <a className='movies-card__link' href={card.trailerLink} target='_blank' rel="noreferrer">
         <img src={card.poster} alt={card.title} className="movies-card__image" />
       </a>
@@ -29,7 +29,7 @@ function MoviesCard({ card }) {
           {card.duration}
         </p>
       </div>
-    </div>
+    </li>
   )
 }
 

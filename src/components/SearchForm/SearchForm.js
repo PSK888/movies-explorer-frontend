@@ -13,7 +13,7 @@ function SearchForm() {
         <div className='search__search'>
           <span className='search__magnifier'></span>
           <div className='search__input-button'>
-            <input className='search__input' placeholder='Фильм'></input>
+            <input className='search__input' placeholder='Фильм' required></input>
             <button className='search__button' type='submit'></button>
           </div>
           <label className='search__label'>Короткометражки

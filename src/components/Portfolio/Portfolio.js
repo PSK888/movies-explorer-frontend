@@ -7,16 +7,22 @@ function Portfolio() {
         <h2 className='portfolio__title'>Портфолио</h2>
         <ul className='portfolio__list'>
           <li className='portfolio__item'>
-            <a className='portfolio__link' href='https://psk888.github.io/how-to-learn/'>Статичный сайт</a>
-            <div className='portfolio__arrow' />
+            <a className='portfolio__link' href='https://psk888.github.io/how-to-learn/' target='_blank' rel='noreferrer'>
+              <span className='portfolio__text'>Статичный сайт</span>
+              <div className='portfolio__arrow' />
+            </a>
           </li>
           <li className='portfolio__item'>
-            <a className='portfolio__link' href='https://psk888.github.io/russian-travel/'>Адаптивный сайт</a>
-            <div className='portfolio__arrow' />
+            <a className='portfolio__link' href='https://psk888.github.io/russian-travel/' target='_blank' rel='noreferrer'>
+              <span className='portfolio__text'>Адаптивный сайт</span>
+              <div className='portfolio__arrow' />
+            </a>
           </li>
           <li className='portfolio__item'>
-            <a className='portfolio__link' href='https://psk888.students.nomoredomains.club/'>Одностраничное приложение</a>
-            <div className='portfolio__arrow' />
+            <a className='portfolio__link' href='https://psk888.students.nomoredomains.club/' target='_blank' rel='noreferrer'>
+              <span className='portfolio__text'>Одностраничное приложение</span>
+              <div className='portfolio__arrow' />
+            </a>
           </li>
         </ul>
       </div>

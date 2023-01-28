@@ -6,7 +6,7 @@
 .footer__container {
   box-sizing: border-box;
   margin: auto;
-  max-width: 1280px;
+  max-width: 100%;
   padding: 80px 70px 20px;
 }
 
@@ -57,18 +57,11 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 1279px) {
-  .footer__container {
-    max-width: 768px;
-    padding: 79px 30px 20px;
-  }
-}
+@media screen and (max-width: 1279px) {}
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .footer__container {
-    max-width: 320px;
-    padding: 80px 10px 10px;
-    font-size: 12px;
+    padding: 79px 30px 20px;
   }
 
   .footer__title {
@@ -94,5 +87,11 @@
   .footer__year {
     color: #8B8B8B;
     margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .footer__container {
+    padding: 79px 10px 20px;
   }
 }

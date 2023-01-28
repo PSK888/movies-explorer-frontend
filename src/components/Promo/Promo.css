@@ -12,17 +12,18 @@
   display: flex;
   justify-content: space-between;
   max-width: 1280px;
-  max-height: 586px;
   margin: 0 auto 0;
 }
 
 .promo__texts {
+  box-sizing: content-box;
   width: 1200px;
   background: #272727;
   display: flex;
   flex-direction: column;
   margin: auto;
   border-radius: 10px;
+  display: ;
 }
 
 .promo__title {
@@ -41,7 +42,8 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 30px;
+  bottom: 0;
+  padding-bottom: 30px;
 }
 
 .promo__link {
@@ -66,35 +68,11 @@
   border: solid 1px black;
 }
 
-.promo__image {
-  width: 310px;
-  height: 304px;
-}
-
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 830px) {
   .promo {
     padding: 20px 20px 0;
     max-width: 768px;
     height: 834px;
-  }
-
-  .promo__container {
-    max-height: 834px;
-  }
-
-  .promo__texts {
-    height: 834px;
-  }
-
-  .promo__links {
-    margin: 0 auto 30px;
-  }
-
-  .promo__image {
-    width: 210px;
-    height: 206px;
-    background-size: contain;
-    margin-bottom: 44px;
   }
 
   .promo__title {
@@ -104,7 +82,6 @@
     letter-spacing: -0.04em;
     margin: 350px auto 314px;
   }
-
 }
 
 @media screen and (max-width: 662px) {
@@ -113,6 +90,7 @@
     line-height: 37px;
     letter-spacing: -0.04em;
     padding: 0 30px 0;
+    margin: 350px auto 250px;
   }
 }
 
@@ -128,18 +106,10 @@
     padding: 0;
   }
 
-  .promo__texts {
-    height: 586px;
-  }
-
   .promo__link {
     width: 82px;
     height: 26px;
     font-size: 10px;
-  }
-
-  .promo__links {
-    margin-bottom: 17px;
   }
 
   .promo__link {

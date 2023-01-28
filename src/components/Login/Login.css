@@ -5,7 +5,7 @@
 .login__container {
   margin: auto;
   max-width: 396px;
-  padding: 70px 0;
+  padding: 79px 0;
 }
 
 .login__logo {
@@ -61,7 +61,7 @@
   font-weight: 500;
   font-size: 14px;
   height: 45px;
-  margin: 159px 0 16px;
+  margin: 164px 0 16px;
   cursor: pointer;
   transition: opacity 0.3s;
 }
@@ -97,13 +97,13 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 768px) {
   .login__container {
-    padding: 232px 0;
+    padding-top: 232px;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 500px) {
   .login__container {
     padding: 56px 30px 30px;
   }
@@ -118,7 +118,7 @@
   }
 
   .login__button {
-    margin: 20px 0 14px;
+    margin: 267px 0 14px;
     font-size: 12px;
   }
 
