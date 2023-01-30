@@ -1,0 +1,163 @@
+.about {
+  background-color: #202020;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.about__container {
+  padding: 110px 70px 108px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.about__texts {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, minmax(min-content, max-content));
+  grid-row-gap: 26px;
+  grid-column-gap: 40px;
+  margin: 70px auto 110px;
+}
+
+.about__subtitle {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: -0.04em;
+}
+
+.about__text {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(2, 36px);
+  font-size: 14px;
+}
+
+.about__oneweek {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3DDC84;
+  color: black;
+  margin: 0;
+  font-size: 14px;
+}
+
+.about__fourweek {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #303030;
+  text-align: center;
+  margin: 0;
+  font-size: 14px;
+}
+
+.about__backend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8B8B8B;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.about__frontend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8B8B8B;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media screen and (max-width: 1279px) {
+  .about__container {
+    padding: 90px 50px 80px;
+  }
+
+  .about__texts {
+    margin-bottom: 93px;
+    grid-row-gap: 22px;
+    grid-column-gap: 30px;
+  }
+
+  .about__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .about__container {
+    height: 585px;
+  }
+
+  .about__oneweek {
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about__oneweek {
+    font-size: 11px;
+  }
+
+  .about__fourweek {
+    font-size: 11px;
+  }
+
+  .about__backend {
+    font-size: 11px;
+  }
+
+  .about__frontend {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .about__container {
+    padding: 70px 18px 60px;
+    min-width: 320px;
+    height: 641px;
+  }
+
+  .about__texts {
+    margin: 0 auto 60px;
+    grid-template-columns: 284px;
+    grid-template-rows: repeat(4, minmax(min-content, max-content));
+    grid-row-gap: 16px;
+  }
+
+  .about__text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about__subtitle {
+    margin-top: 44px;
+    font-size: 18px;
+  }
+
+  .about__subtitle:first-of-type {
+    margin-top: 60px;
+  }
+
+  .about__oneweek {
+    width: 100px;
+  }
+}

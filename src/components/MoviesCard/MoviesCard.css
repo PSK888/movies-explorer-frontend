@@ -1,0 +1,122 @@
+.movies-card {
+  display: flex;
+  background: #202020;
+  flex-direction: column;
+  width: 270px;
+}
+
+.movies-card__texts {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 24px;
+}
+
+.movies-card__title {
+  width: 100%;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  height: 16px;
+}
+
+.movies-card__about {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.movies-card__duration {
+  font-size: 11px;
+  color: #8B8B8B;
+  padding-top: 6px;
+  border-top: 1px solid #424242;
+  width: 100%;
+  margin: 25px 0 0;
+}
+
+.movies-card__like {
+  background-image: url('../../images/like.svg');
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background-color: #2F2F2F;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.movies-card__like:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.movies-card__like_active {
+  background-image: url('../../images/like-active.svg');
+}
+
+.movies-card__image {
+  width: 100%;
+}
+
+.movies-card__link {
+  padding: 0;
+  line-height: 0;
+}
+
+.movies-card__delete {
+  background-image: url('../../images/delete.svg');
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background-color: #2F2F2F;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.movies-card__delete:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width:1279px) {
+
+  .movies-card {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .movies-card {
+    padding: 0;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .movies-card__image {
+    margin-bottom: 10px;
+  }
+
+  .movies-card__title {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .movies-card__duration {
+    margin-top: 25px;
+    font-size: 10px;
+  }
+
+  .movies-card__about {
+    margin-top: 0;
+  }
+
+}
