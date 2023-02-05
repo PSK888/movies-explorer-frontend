@@ -1,0 +1,142 @@
+.login {
+  background: #202020;
+}
+
+.login__container {
+  margin: auto;
+  max-width: 396px;
+  padding: 70px 0;
+}
+
+.login__logo {
+  display: block;
+  background: url('../../images/logo.svg');
+  width: 38px;
+  height: 38px;
+}
+
+.login__title {
+  margin: 40px 0;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__label {
+  color: #8B8B8B;
+  font-size: 10px;
+  margin: 0 0 10px;
+  height: 12px;
+}
+
+.login__input {
+  padding: 0;
+  height: 46px;
+  padding-left: 15px;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #2F2F2F;
+  color: white;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.login__message {
+  color: #EE3465;
+  font-size: 11px;
+  height: 12px;
+}
+
+.login__error {
+  margin-top: 5px;
+  color: #EE3465;
+  font-size: 10px;
+}
+
+.login__button {
+  padding: 0;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  background: #4285F4;
+  font-weight: 500;
+  font-size: 14px;
+  height: 45px;
+  margin: 164px 0 16px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.login__button_disabled {
+  color: #C2C2C2;
+  background-color: #F8F8F8;
+  cursor: auto;
+}
+
+.login__button:hover {
+  opacity: 0.6;
+}
+
+.login__button_disabled:hover {
+  opacity: 1;
+}
+
+.login__text {
+  font-size: 14px;
+  margin: auto;
+  color: #8B8B8B;
+}
+
+.login__link {
+  text-decoration: none;
+  color: #4285F4;
+  margin-left: 6px;
+  transition: opacity 0.3s;
+}
+
+.login__link:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+  .login__container {
+    padding-top: 232px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .login__container {
+    padding: 56px 30px 30px;
+  }
+
+  .login__logo {
+    margin: auto;
+  }
+
+  .login__title {
+    text-align: center;
+    margin: 50px 0 80px;
+  }
+
+  .login__button {
+    margin: 267px 0 14px;
+    font-size: 12px;
+  }
+
+  .login__text {
+    font-size: 12px;
+  }
+
+  .login__link {
+    margin-left: 7px;
+  }
+
+  .login__message {
+    margin-top: 217px;
+  }
+}
