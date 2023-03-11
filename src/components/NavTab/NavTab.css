@@ -1,0 +1,41 @@
+.nav__links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    bottom: 0;
+    padding-bottom: 30px;
+}
+
+.nav__link {
+    background-color: #303030;
+    border: solid 1px #303030;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 36px;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+    box-sizing: border-box;
+}
+
+.nav__link:hover {
+    opacity: 0.6;
+    border: solid 1px black;
+}
+
+@media screen and (max-width: 321px) {
+    .nav__link {
+        width: 82px;
+        height: 26px;
+        font-size: 10px;
+    }
+
+    .nav__link {
+        margin-top: 0;
+    }
+}
