@@ -54,9 +54,22 @@
   color: #EE3465;
 }
 
+.profile__message_block{
+  margin-top: 10px;
+}
+
 .profile__message {
+  margin-top: 10px;
   padding-top: 20px;
   color: #EE3465;
+  font-size: 11px;
+  text-align: left;
+  height: 12px;
+}
+
+.profile__message_ok {
+  padding-top: 20px;
+  color: #fff;
   font-size: 11px;
   text-align: left;
   height: 12px;

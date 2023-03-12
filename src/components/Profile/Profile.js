@@ -11,7 +11,7 @@ function Profile({ handleUpdateUserInfo, message, handleLogout }) {
   const [valid, setValid] = useState(true); // валидация
   const [error, setError] = useState(''); // ошибки при валидации
   const [oldValue, setOldValue] = useState(true); // данные не менялись
-
+  const [ok, setOk] = useState('');
 
   // eslint-disable-next-line
   function handleChangeEmail(e) {
@@ -57,10 +57,20 @@ function Profile({ handleUpdateUserInfo, message, handleLogout }) {
   }, [handleChangeName, handleChangeEmail, name, email, currentUser.name, currentUser.email]);
 
 
+
+  function showOkMessage() {
+    const clearMessage = () => setOk('');
+    setOk('Данные успешно обновлены');
+    setTimeout(() => clearMessage(), 4000);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     handleUpdateUserInfo(email, name);
+    showOkMessage();
   };
+
+
 
   return (
     <main className='profile'>
@@ -91,9 +101,10 @@ function Profile({ handleUpdateUserInfo, message, handleLogout }) {
               required />
           </div>
 
-          <div
-            className={`profile__message ${(oldValue) ? 'profile__message' : ''}`}
-          >{message || error}</div>
+          <div className='profile__message_block'>
+            <span className={`profile__message ${(oldValue) ? 'profile__message' : ''}`}>{message || error}</span>
+            <span className='profile__message_ok'>{ok}</span>
+          </div>
 
           <button
             className={`profile__button ${(oldValue || (!valid)) ? 'profile__button_disabled' : ''}`}
