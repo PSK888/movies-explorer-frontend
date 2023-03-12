@@ -66,7 +66,7 @@ function Login({ handleLogin, message, loggedIn }) {
           <label className='login__label'>Пароль</label>
           <input
             className={`login__input ${!valid ? 'login__input_error' : ''}`}
-            type='text'
+            type='password'
             name='password'
             value={password}
             placeholder="Пароль"

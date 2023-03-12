@@ -87,7 +87,7 @@ function Register({ handleRegistration, message }) {
           <label className='register__label'>Пароль</label>
           <input
             className={`register__input ${!valid ? 'register__input_error' : ''}`}
-            type='text'
+            type='password'
             name='password'
             value={password}
             placeholder="Пароль"
