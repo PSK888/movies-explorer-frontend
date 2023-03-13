@@ -22,7 +22,8 @@ function Movies({ movieCards, movieList, likedMovieList, likeMovie, deleteMovie,
           addMoreMovies={addMoreMovies} // Ещё
 
         />
-        <button onClick={() => addMoreMovies()} className="movies__button">Еще</button>
+        {movieCards.length === 0 ? '' : movieCards.length > movieList && <button onClick={() => addMoreMovies()} className="movies__button">Еще</button>}
+
       </div>
 
 
