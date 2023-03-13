@@ -283,7 +283,7 @@ function App() {
           } />
           <Route path="/signup" element={
             <ProtectedRoute loggedIn={!loggedIn}>
-              <Register handleRegistration={handleRegistration} message={message} loggedIn={!loggedIn} />
+              <Register handleRegistration={handleRegistration} message={message} />
             </ProtectedRoute>
           } />
           <Route path="/profile" element={
