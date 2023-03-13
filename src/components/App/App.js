@@ -22,6 +22,7 @@ import Preloader from '../Preloader/Preloader';
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
+  const path = location.pathname; // путь нынешней ссылки
   const jwt = localStorage.getItem('jwt');
   const { width } = useLookWindowSize() // хук ширины экрана
 
@@ -47,7 +48,8 @@ function App() {
       mainApi.checkToken(jwt)
         .then((data) => {
           setCurrentUser(data);
-          setLoggedIn(true);
+          setLoggedIn(true); 
+          navigate(path);
         })
         .catch((err) => {
           console.log(`Ошибка авторизации: ${err}`);
