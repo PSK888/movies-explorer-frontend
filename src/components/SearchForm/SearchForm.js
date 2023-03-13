@@ -4,25 +4,27 @@ import React, { useEffect, useState } from "react";
 
 function SearchForm({ handleSearch, duration }) {
   const location = useLocation();
-  const [value, setValue] = useState(localStorage.getItem('value')); // данные формы
+  const [value, setValue] = useState(localStorage.getItem('value') || ''); // чистим данные формы при загрузке после выхода и очистки localStorage
   const [checkbox, setCheckbox] = useState(localStorage.getItem('checkbox')); // фильтр фильмов
 
   useEffect(() => {
     if (location.pathname === '/movies') {
       localStorage.setItem('value', value)
       localStorage.setItem('checkbox', checkbox)
+      // handleSearch(value) // поиск сразу же при вводе данных
     }
-     // eslint-disable-next-line 
+    // eslint-disable-next-line 
   }, [value, checkbox])
 
   useEffect(() => {
     if (location.pathname === '/movies') {
-      handleSearch(localStorage.getItem('value'))
+      handleSearch(value)
       duration(checkbox)
     }
     if (location.pathname === '/saved-movies') {
-     // setCheckbox('cb_off') // отключаем фильтр при переходе в избранное
-      handleSearch('')
+      localStorage.setItem('checkbox', checkbox)
+      setValue('') // очищаем форму в избранном
+      handleSearch('') // показываем все избранные фильмы при переходе в сохраненные 
       duration(checkbox)
     }
     // eslint-disable-next-line 
@@ -30,8 +32,8 @@ function SearchForm({ handleSearch, duration }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setCheckbox('cb_off') // отключаем фильтр при новом поиске
     handleSearch(value)
+    duration(checkbox)
   }
 
   return (
@@ -44,7 +46,8 @@ function SearchForm({ handleSearch, duration }) {
               className='search__input'
               type='text'
               placeholder='Фильм'
-              // required // запрет на пустую форму поиска
+              value={value} // берем данные формы из локального хранилища
+              required // запрет на пустую форму поиска
               onChange={(e) => setValue(e.target.value)}
             />
             <button className='search__button' type='submit' />
@@ -55,7 +58,8 @@ function SearchForm({ handleSearch, duration }) {
               <button
                 className={`search__checkbox_button ${checkbox === 'cb_on' ? 'search__checkbox_button_on' : 'search__checkbox_button_off'}`}
                 type='button'
-                onClick={() => { setCheckbox(checkbox === 'cb_off' ? 'cb_on' : 'cb_off') }} />
+                onClick={() => { setCheckbox(checkbox === 'cb_off' ? 'cb_on' : 'cb_off') }}
+              />
             </div>
           </div>
         </div>

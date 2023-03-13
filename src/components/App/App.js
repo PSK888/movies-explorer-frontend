@@ -48,7 +48,7 @@ function App() {
       mainApi.checkToken(jwt)
         .then((data) => {
           setCurrentUser(data);
-          setLoggedIn(true); 
+          setLoggedIn(true);
           navigate(path);
         })
         .catch((err) => {
@@ -56,6 +56,7 @@ function App() {
           setLoggedIn(false);
         });
     }
+    // eslint-disable-next-line 
   }, [jwt]);
 
   // Получаем фильмы beatfilm и сохраняем в локальное хранилище
@@ -167,13 +168,13 @@ function App() {
 
   // Выход из профиля с удалением всех данных
   function handleLogout() {
+    setLoggedIn(false);
+    setCurrentUser({});
     localStorage.clear();
     setLocalMovieBase([]);
     setLocalLikedMovies([]);
     setMovies([]);
     setLikedMovies([]);
-    setCurrentUser({});
-    setLoggedIn(false);
     navigate('/')
   };
 
