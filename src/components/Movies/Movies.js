@@ -20,7 +20,6 @@ function Movies({ movieCards, movieList, likedMovieList, likeMovie, deleteMovie,
           currentUser={currentUser}
           movieList={movieList} // изначальное количество фильмов на странице
           addMoreMovies={addMoreMovies} // Ещё
-
         />
         {movieCards.length === 0 ? '' : movieCards.length > movieList && <button onClick={() => addMoreMovies()} className="movies__button">Еще</button>}
 

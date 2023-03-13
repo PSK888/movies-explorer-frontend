@@ -30,7 +30,7 @@ function SearchForm({ handleSearch, duration }) {
     // eslint-disable-next-line 
   }, [location, checkbox])
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault()
     handleSearch(value)
     duration(checkbox)

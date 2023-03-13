@@ -18,6 +18,12 @@ import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
 import useLookWindowSize from "../../hooks/useLookWindowSize";
 import Preloader from '../Preloader/Preloader';
+import {
+  SHORT_MOVIE, EMAIL_ERROR, AUTH_ERROR, QUANTITY_MAX,
+  QUANTITY_LAPTOP, QUANTITY_TABLET, QUANTITY_MOBILE,
+  LIST_MAX, LIST_LAPTOP, LIST_TABLET, LIST_MOBILE,
+  SCREEN_MAX, SCREEN_LAPTOP, SCREEN_TABLET, SCREEN_MOBILE,
+} from '../../utils/constants';
 
 function App() {
   const navigate = useNavigate();
@@ -96,18 +102,18 @@ function App() {
 
   // Хук колличества карточек на странице + добавление кнопкой "ещё"
   useEffect(() => {
-    if (width >= 1280) {
-      setAddMovieQuantity(4);
-      setMovieList(16);
-    } else if (width >= 1100 && width <= 1279) {
-      setAddMovieQuantity(3);
-      setMovieList(9);
-    } else if (width >= 701 && width <= 1099) {
-      setAddMovieQuantity(2);
-      setMovieList(8);
-    } else if (width <= 320 && width <= 700) {
-      setAddMovieQuantity(1);
-      setMovieList(5);
+    if (width >= SCREEN_MAX) {
+      setAddMovieQuantity(QUANTITY_MAX);
+      setMovieList(LIST_MAX);
+    } else if (width >= SCREEN_LAPTOP && width < SCREEN_MAX) {
+      setAddMovieQuantity(QUANTITY_LAPTOP);
+      setMovieList(LIST_LAPTOP);
+    } else if (width >= SCREEN_TABLET && width < SCREEN_LAPTOP) {
+      setAddMovieQuantity(QUANTITY_TABLET);
+      setMovieList(LIST_TABLET);
+    } else if (width <= SCREEN_MOBILE && width < SCREEN_TABLET) {
+      setAddMovieQuantity(QUANTITY_MOBILE);
+      setMovieList(LIST_MOBILE);
     }
   }, [width]);
 
@@ -124,7 +130,7 @@ function App() {
         setMessage('');
       })
       .catch((err) => {
-        if (409) {
+        if (EMAIL_ERROR) {
           setMessage("Данный email уже зарегистрирован");
         } else {
           setMessage(`Во время регистрации произошла ошибка: ${err}`);
@@ -142,7 +148,7 @@ function App() {
         setMessage('');
       })
       .catch((err) => {
-        if (401) {
+        if (AUTH_ERROR) {
           setMessage("Неверные логин или пароль");
         } else {
           setMessage(`Во время авторизации произошла ошибка: ${err}`);
@@ -158,7 +164,7 @@ function App() {
         setMessage('');
       })
       .catch((err) => {
-        if (409) {
+        if (EMAIL_ERROR) {
           setMessage("Данный email уже зарегистрирован");
         } else {
           setMessage(`Во время изменения данных произошла ошибка: ${err}`);
@@ -238,7 +244,7 @@ function App() {
   function movieDuration(checkbox) {
     const movie = JSON.parse(localStorage.getItem('movie'));
     if (movie && checkbox === 'cb_on') {
-      const shortMovie = movie.filter((movie) => movie.duration <= 40);
+      const shortMovie = movie.filter((movie) => movie.duration <= SHORT_MOVIE);
       setMovies(shortMovie);
     } else {
       setMovies(movie);

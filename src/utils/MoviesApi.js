@@ -1,4 +1,4 @@
-const MOVIES_URL = 'https://api.nomoreparties.co/beatfilm-movies' || 'http://localhost:3001';
+import { MOVIES_URL } from '../utils/constants';
 
 class MoviesApi {
   constructor({ baseUrl }) {

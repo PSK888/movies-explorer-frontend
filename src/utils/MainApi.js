@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.filmopoisk.nomoredomains.club' || 'http://localhost:3001';
+import { BASE_URL } from '../utils/constants';
 
 class MainApi {
   constructor({ baseUrl, headers }) {
