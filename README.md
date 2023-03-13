@@ -8,4 +8,4 @@ https://filmopoisk.nomoredomains.club/movies
 
 # Пулреквест :
 
-https://github.com/PSK888/movies-explorer-frontend/pull/5
+https://github.com/PSK888/movies-explorer-frontend/pull/7

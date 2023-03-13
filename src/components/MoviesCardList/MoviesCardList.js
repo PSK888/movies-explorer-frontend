@@ -21,7 +21,6 @@ function MoviesCardList({ movieCards, currentUser, likedMovieList, likeMovie, de
         }).slice(0, movieList)}
       </div>
     </section>
-
   )
 }
 

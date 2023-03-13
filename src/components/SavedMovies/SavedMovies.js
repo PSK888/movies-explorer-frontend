@@ -16,7 +16,7 @@ function SavedMovies({ movieCards, movieList, deleteMovie, addMoreMovies, handle
           movieList={movieList} // изначальное количество фильмов на странице
           addMoreMovies={addMoreMovies} // Ещё
         />
-        {movieCards.length === 0 ? '' : movieCards.length > movieList && <button onClick={() => addMoreMovies()} className="movies__button">Еще</button>} 
+        {movieCards.length === 0 ? 'Ничего не найдено' : movieCards.length > movieList && <button onClick={() => addMoreMovies()} className="movies__button">Еще</button>}
       </div>
     </main>
   )
